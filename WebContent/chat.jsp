@@ -34,7 +34,7 @@ $(document).ready(function(){
 		$('.messages').css({display:'none'});
 	});
 	$('.img2').click(function() {
-		$('.chat').css('height','80vh');
+		$('.chat').css('height','100vh');
 		$('.img1').css("display","block");
 		$('.img2').css({display:'none'}); 		
 		$('.message-box').css({display:'block'});
@@ -79,7 +79,8 @@ $(document).ready(function(){
 		  if (m != d.getMinutes()) {
 		    m = (d.getMinutes()<10?'0':'') + d.getMinutes() ;
 		    h = (d.getHours()<10?'0':'') + d.getHours();
-		    $('<div class="timestamp">' + h + ':' + m + '</div>').appendTo($('.mCSB_container:last'));
+		    var ampm = (d.getHours() >= 12) ? "PM" : "AM";
+		    $('<div class="timestamp">' + h + ':' + m +' '+ampm +'</div>').appendTo($('.mCSB_container:last'));
 		  }
 		}
 	
@@ -147,7 +148,7 @@ Chat
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 300px;
-  height: 80vh;
+  height: 100vh;
   max-height: 500px;
   z-index: 2;
   overflow: hidden;
